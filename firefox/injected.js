@@ -1,9 +1,12 @@
+import { shouldEnableExpander } from './popup.js';
+
 (function() {
     'use strict';
 
     let latestCount = null;
 
     function modifyBadge(number) {
+        if (!shouldEnableExpander()) return;
         if (number == null) return;
 
         const badge = document.querySelector('.ytSpecIconBadgeShapeBadge')

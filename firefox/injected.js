@@ -1,11 +1,7 @@
+import { shouldEnableExpander } from './popup.js';
+
 (function() {
     'use strict';
-
-    // Page-injected script cannot use ES module imports. Read a flag
-    // injected by the extension content script on `window`.
-    function shouldEnableExpander() {
-        return !!window.__ytNotificationBellEnableExpander;
-    }
 
     let latestCount = null;
 
